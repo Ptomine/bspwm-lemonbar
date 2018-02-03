@@ -1,0 +1,11 @@
+URxvt.scrollstyle: plain
+URxvt*scrollWithBuffer: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.font: xft:Monospace:pixelsize=14
+URxvt.letterSpace: 0
+URxvt*background: black
+URxvt*foreground: white
+URxvt.perl-ext-common:tabbed
+URxvt.transparent: true
+URxvt.shading: 50

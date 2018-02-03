@@ -1,0 +1,1 @@
+# bspwm lemonbar urxvt
