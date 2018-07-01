@@ -8,7 +8,7 @@ alt + Print
 
 #Fullscreen shut
 Print
- shutter -n -e -a
+ shutter -n -e -f
 
 # terminal emulator
 super + Return

@@ -2,7 +2,7 @@
 
 
 
-bspc monitor -d I II III IV V VI VII VIII IX
+bspc monitor -d I II III IV V VI
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -15,9 +15,15 @@ bspc rule -a Gimp state=floating follow=on
 bspc rule -a TelegramDesktop desktop='^4' state=floating
 bspc rule -a Acroread state=tiled
 
-feh --bg-center ~/pics/wallhaven-87808.jpg &
+feh --bg-center ~/pics/wallhaven-12880.jpg &
 
 sxhkd &
 
+export TERM=rxvt &
+
 perWindowLayoutD &
-~/scripts/lemon.sh | lemonbar -p -g 1576x20+12+4 -u 2 -f "Cantarell:size=10" -f "Font Awesome:size=12"
+~/scripts/lemon.sh | lemonbar -p -g 1576x26+10+4 -u 2 -f "Cantarell:size=12" -f "Font Awesome:size=14"
+
+
+#~/scripts/.reader.sh | lemonbar -p -f "Font Awesome" -f "Cantarell" -g 1000x20+12+4 -u 2 &
+#~/scripts/.lemon.py &
