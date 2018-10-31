@@ -1,11 +1,13 @@
-URxvt.scrollstyle: plain
+URxvt.scrollBar: false 
 URxvt*scrollWithBuffer: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
-URxvt.font: xft:Monospace:pixelsize=14
+URxvt.font: xft:DejaVu Sans Mono for Powerline-12
 URxvt.letterSpace: 0
 URxvt*background: black
 URxvt*foreground: white
-URxvt.perl-ext-common:tabbed
+URxvt.perl-ext-common: resize-font
+URxvt.tabbed.tabbar-bg: 8
+URxvt.tabbed.tab-bg: 6
 URxvt.transparent: true
 URxvt.shading: 50

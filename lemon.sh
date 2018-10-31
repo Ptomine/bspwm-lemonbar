@@ -30,7 +30,7 @@ network() {
 }
 
 get_app_icon() {
-	if [[ ${1} == "\"sublime_text\"" ]] ; then
+	if [[ ${1} == "\"sublime_text\"" ]] || [[ ${1} == "\"libreoffice\"" ]]; then
         echo ""
 	elif [[ ${1} == "\"URxvt\"" ]] ; then
 	   echo ""
@@ -38,6 +38,10 @@ get_app_icon() {
 	   echo ""
 	elif [[ ${1} == "\"TelegramDesktop\"" ]] ; then
 	   echo ""
+    elif [[ ${1} == "\"jetbrains-clion\"" ]] || [[ ${1} == "\"jetbrains-pycharm\"" ]] || [[ ${1} == "\"jetbrains-rider\"" ]] || [[ ${1} == "\"jetbrains-idea-ce\"" ]]; then
+        echo ""
+    elif [[ ${1} == "\"Pcmanfm\"" ]] ; then
+        echo ""
 	else
 	   echo ""
 	fi	
@@ -62,9 +66,9 @@ groups() {
     done
 
     if [ -z ${apps[$cur]} ] ; then
-    	line="${line}%{B#005577}%{+u}        %{B#000000}%{-u}"
+    	line="${line}%{B#BE005577}%{+u}        %{B#22000000}%{-u}"
     else
-    	line="${line}%{B#005577}%{+u}    ${apps[$cur]}    %{B#000000}%{-u}"
+    	line="${line}%{B#BE005577}%{+u}    ${apps[$cur]}    %{B#22000000}%{-u}"
     fi
 
     for w in `seq $((cur + 1)) $((tot - 1))` ; do
@@ -80,7 +84,7 @@ groups() {
 }
 
 while :; do
-	buf="%{l}"
+	buf="%{l}%{B#22000000}%{-u}"
 	buf="${buf} $(groups)   %{c}  "
 	buf="${buf} $(clock) %{r}"
 	buf="${buf} : $(volume)  "

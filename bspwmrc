@@ -15,14 +15,15 @@ bspc rule -a Gimp state=floating follow=on
 bspc rule -a TelegramDesktop desktop='^4' state=floating
 bspc rule -a Acroread state=tiled
 
-feh --bg-center ~/pics/wallhaven-12880.jpg &
+feh --bg-center ~/pics/wallhaven-173695.jpg &
 
 sxhkd &
 
-export TERM=rxvt &
 
 perWindowLayoutD &
-~/scripts/lemon.sh | lemonbar -p -g 1576x26+10+4 -u 2 -f "Cantarell:size=12" -f "Font Awesome:size=14"
+~/scripts/lemon.sh | lemonbar -p -g 1576x26+10+4 -u 2 -f "Cantarell:size=12" -f "Font Awesome:size=14" &
+
+compton &
 
 
 #~/scripts/.reader.sh | lemonbar -p -f "Font Awesome" -f "Cantarell" -g 1000x20+12+4 -u 2 &
