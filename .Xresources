@@ -11,3 +11,8 @@ URxvt.tabbed.tabbar-bg: 8
 URxvt.tabbed.tab-bg: 6
 URxvt.transparent: true
 URxvt.shading: 50
+#URxvt.keysym.Control-Insert: perl:clipboard:copy
+#URxvt.keysym.Shift-Insert: perl:clipboard:paste
+#URxvt.copyCommand: xsel -ib
+#URxvt.pasteCommand: xsel -ob
+

@@ -30,7 +30,7 @@ network() {
 }
 
 get_app_icon() {
-	if [[ ${1} == "\"sublime_text\"" ]] || [[ ${1} == "\"libreoffice\"" ]]; then
+	if [[ ${1} == "\"sublime_text\"" ]] || [[ ${1} == "\"libreoffice-writer\"" ]]; then
         echo ""
 	elif [[ ${1} == "\"URxvt\"" ]] ; then
 	   echo ""
