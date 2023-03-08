@@ -2,7 +2,7 @@ URxvt.scrollBar: false
 URxvt*scrollWithBuffer: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
-URxvt.font: xft:DejaVu Sans Mono for Powerline-12
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12
 URxvt.letterSpace: 0
 URxvt*background: black
 URxvt*foreground: white
@@ -10,9 +10,14 @@ URxvt.perl-ext-common: resize-font
 URxvt.tabbed.tabbar-bg: 8
 URxvt.tabbed.tab-bg: 6
 URxvt.transparent: true
-URxvt.shading: 50
+URxvt.shading: 40
 #URxvt.keysym.Control-Insert: perl:clipboard:copy
 #URxvt.keysym.Shift-Insert: perl:clipboard:paste
 #URxvt.copyCommand: xsel -ib
 #URxvt.pasteCommand: xsel -ob
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
+xscreensaver.newLoginCommand: dm-tool switch-to-greeter

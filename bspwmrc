@@ -2,29 +2,38 @@
 
 
 
-bspc monitor -d I II III IV V VI
+bspc monitor eDP1 -d 1 2 3 4 5 6
 
 bspc config border_width         2
-bspc config window_gap          12
+bspc config window_gap          10
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   false
-bspc config gapless_monocle      true
+bspc config gapless_monocle      false
 
 bspc rule -a Gimp state=floating follow=on
-bspc rule -a TelegramDesktop desktop='^4' state=floating
+bspc rule -a TelegramDesktop desktop='^4' state=tiled
+bspc rule -a Slack desktop='^4' state=tiled
 bspc rule -a Acroread state=tiled
 
-feh --bg-center ~/pics/wallhaven-173695.jpg &
+feh --bg-fill ~/Downloads/wallhaven-737120.jpg &
 
 sxhkd &
+xxkb &
+#export _JAVA_AWT_WM_NONREPARENTING=1 &
+setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle, terminate:ctrl_alt_bksp &
 
 
 perWindowLayoutD &
-~/scripts/lemon.sh | lemonbar -p -g 1576x26+10+4 -u 2 -f "Cantarell:size=12" -f "Font Awesome:size=14" &
+~/scripts/dual_monitor.sh &
+~/scripts/lemon.sh | lemonbar -p -g 1900x35+10+8 -u 2 -f "Cantarell:size=14" -f "Font Awesome:size=18" &
 
-compton &
-
+picom &
+wmname LG3D &
+xset -b &
+xscreensaver &
+#light-locker --lock-on-suspend --lock-on-lid --lock-after-screensaver=120&
+twmnd &
 
 #~/scripts/.reader.sh | lemonbar -p -f "Font Awesome" -f "Cantarell" -g 1000x20+12+4 -u 2 &
 #~/scripts/.lemon.py &

@@ -11,7 +11,7 @@ battery() {
 }
 
 volume() {
-	amixer get Master | grep 'off' >/dev/null && echo "muted" || amixer get Master | grep -w 'Mono' | awk '{print$4}'
+	amixer get Master | grep 'off' >/dev/null && echo "[muted]" || amixer get Master | grep -w 'Right:' | awk '{print$5}'
 }
 
 cpuload() {
@@ -26,7 +26,7 @@ memused() {
 }
 
 network() {
-	ip link show wlp3s0 | grep 'state UP' >/dev/null && (ping -c 1 8.8.8.8 >/dev/null 2>&1 && echo "" || echo "disconnected") || (ip link show enp0s25 | grep 'state UP' >/dev/null && (ping -c 1 8.8.8.8 >/dev/null 2>&1 && echo "" || echo "disconnected"))
+	ip link show wlp2s0 | grep 'state UP' >/dev/null && (ping -c 1 8.8.8.8 >/dev/null 2>&1 && echo "" || echo "disconnected") || (ip link show enp0s25 | grep 'state UP' >/dev/null && (ping -c 1 8.8.8.8 >/dev/null 2>&1 && echo "" || echo "disconnected"))
 }
 
 get_app_icon() {
@@ -38,11 +38,21 @@ get_app_icon() {
 	   echo ""
 	elif [[ ${1} == "\"TelegramDesktop\"" ]] ; then
 	   echo ""
-    elif [[ ${1} == "\"jetbrains-clion\"" ]] || [[ ${1} == "\"jetbrains-pycharm\"" ]] || [[ ${1} == "\"jetbrains-rider\"" ]] || [[ ${1} == "\"jetbrains-idea-ce\"" ]]; then
+    elif [[ ${1} == "\"jetbrains-clion\"" ]] || [[ ${1} == "\"jetbrains-rider\"" ]]; then
         echo ""
     elif [[ ${1} == "\"Pcmanfm\"" ]] ; then
         echo ""
-	else
+    elif [[ ${1} == "\"jetbrains-pycharm-ce\"" ]] ; then
+        echo ""   
+    elif [[ ${1} == "\"jetbrains-idea-ce\"" ]] ; then
+        echo ""        
+    elif [[ ${1} == "\"Slack\"" ]] ; then
+        echo ""
+    elif [[ ${1} == "\"icq\"" ]] ; then
+        echo ""
+    elif [[ ${1} == "\"Chromium\"" ]] ; then
+        echo ""
+    else
 	   echo ""
 	fi	
 }

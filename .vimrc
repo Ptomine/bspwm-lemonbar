@@ -75,9 +75,9 @@ inoremap <C-U> <C-G>u<C-U>
 
 " In many terminal emulators the mouse works just fine.  By enabling it you
 " can position the cursor, Visually select and scroll with the mouse.
-if has('mouse')
-  set mouse=a
-endif
+" if has('mouse')
+"   set mouse=a
+" endif
 
 " Switch syntax highlighting on when the terminal has colors or when using the
 " GUI (which always has colors).
@@ -101,6 +101,7 @@ if has("autocmd")
   filetype plugin indent on
   set tabstop=4
   set shiftwidth=4
+  runtime macros/matchit.vim
 
   " Put these in an autocmd group, so that you can revert them with:
   " ":augroup vimStartup | au! | augroup END"
@@ -135,4 +136,28 @@ if has('langmap') && exists('+langremap')
   " compatible).
   set nolangremap
 endif
+
 :imap jj <Esc>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+set hidden
+set number
+hi Visual ctermbg=14 ctermfg=14
+
+execute pathogen#infect()
+
+set pyxversion=3
+let g:python_host_prog = "/usr/bin/python2"
+let g:python3_host_prog = "/usr/bin/python3"
+let g:deoplete#enable_at_startup = 1
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --no-messages "" .'
+
+let g:fzf_command_prefix = 'Fzf'
+nnoremap <leader>v :FzfFiles<cr>
+nnoremap <leader>u :FzfTags<cr>
+nnoremap <leader>j :call fzf#vim#tags("'".expand('<cword>'))<cr>
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> [B :blast<CR>

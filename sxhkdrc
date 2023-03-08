@@ -4,11 +4,11 @@
 
 #Area shut
 alt + Print
- shutter -n -e -s
+ flameshot gui
 
 #Fullscreen shut
 Print
- shutter -n -e -f
+ flameshot full -p ~/Screenshots
 
 # terminal emulator
 super + Return
@@ -20,9 +20,9 @@ super + v
 
 #Audio ctrl
 XF86AudioLowerVolume
-	amixer set Master 1-
+	amixer set Master 5%-
 XF86AudioRaiseVolume
-	amixer set Master 1+
+	amixer set Master 5%+
 XF86AudioMute
 	amixer set Master toggle
 XF86AudioMicMute
@@ -30,13 +30,16 @@ XF86AudioMicMute
 
 #Brightness ctrl
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	xbacklight -inc 5
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	xbacklight -dec 5
 
 #Hibernate
 XF86ScreenSaver
 	sudo s2disk
+#Lock
+super + @F7
+	xscreensaver-command --lock
 
 # program launcher
 super + @space
